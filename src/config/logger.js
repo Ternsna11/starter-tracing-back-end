@@ -17,3 +17,22 @@ module.exports = logger;
 // Node converts all header keys to lowercase, so it does not matter what case is used in the original request. You will access the header using all lowercase characters in the key.
 
 //Also note that the above code is using the LOG_LEVEL environment variable to set the log level for the logger. For pino, the log level can be one of the following values: fatal, error, warn, info, debug, trace, or silent. If the LOG_LEVEL is not set, the default will be info.
+
+
+//const pinoHttp = require("pino-http");
+//  const { nanoid } = require("nanoid");
+
+//  const level = process.env.LOG_LEVEL
+
+// +const nodeEnv = process.env.NODE_ENV || 'development'
+// +const prettyPrint = nodeEnv === "development"
+
+//  const logger = pinoHttp({
+//    genReqId: (request) => request.headers['x-request-id'] || nanoid(),
+// -  level
+// +  level,
+// +  prettyPrint
+//  });
+
+// module.exports = logger;
+// In the above code, if the NODE_ENV environment variable isn't set, or if it's set to development, the logger will automatically load pino-pretty and output the logs in a human-readable format. this code completed is also at the top. the code right above shows the changes to use prettyPrint
